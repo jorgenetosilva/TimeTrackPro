@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Timer.Core.Settings;
 
 namespace Timer.Data.Context;
-public class BaseDbContext
+public class BaseDbContext : DbContext
 {
     private readonly string _configurationFolder;
     private readonly AppSettings _appSettings;

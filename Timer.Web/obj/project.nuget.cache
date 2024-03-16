@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rwaseQi8SYj2cX2Smkshyb1GpWN74Ta1FYPSypIhI4a8YqrbjDwjeYoC0fROY7cpGeWPDksip5I6AVw2gTBI8Q==",
+  "dgSpecHash": "LNWlMnzkEx8sev2avvYagcSdgpv3bctLq8NdAsHycJ2L66G5Qk+GMS2KVYfsCse23WpR4RE6bvqQCwP/DNdejA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
+  "projectFilePath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.17\\microsoft.entityframeworkcore.7.0.17.nupkg.sha512",
     "C:\\Users\\jorge\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.17\\microsoft.entityframeworkcore.abstractions.7.0.17.nupkg.sha512",
