@@ -46,18 +46,6 @@ INSERT INTO categoria (nome) VALUES
 ('Gastronomia'),
 ('Agricultura');
 
-INSERT INTO usuario (nome) VALUES
-('Carlos Silva'),
-('Maria Oliveira'),
-('João Santos'),
-('Ana Costa'),
-('Luiz Souza'),
-('Patricia Lima'),
-('Marcos Rocha'),
-('Fernanda Andrade'),
-('Roberto Pereira'),
-('Juliana Almeida');
-
 INSERT INTO atividade (nome, categoria_id) VALUES
 ('Desenvolvimento de Website', 1),
 ('Reforma de Escritório', 2),
@@ -82,3 +70,15 @@ INSERT INTO registro_tempo (usuario_id, atividade_id, empresa_cidade_empresa_id,
 (8, 8, 8, 8, INTERVAL '6 hours'),
 (9, 9, 9, 9, INTERVAL '1 hour 50 minutes'),
 (10, 10, 10, 10, INTERVAL '4 hours 10 minutes');
+
+INSERT INTO usuario (nome, sobrenome, matricula) VALUES
+('Carlos', 'Silva', 'MAT001'),
+('Maria', 'Oliveira', 'MAT002'),
+('João', 'Santos', 'MAT003'),
+('Ana', 'Costa', 'MAT004'),
+('Luiz', 'Souza', 'MAT005'),
+('Patricia', 'Lima', 'MAT006'),
+('Marcos', 'Rocha', 'MAT007'),
+('Fernanda', 'Andrade', 'MAT008'),
+('Roberto', 'Pereira', 'MAT009'),
+('Juliana', 'Almeida', 'MAT010');
