@@ -714,11 +714,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
+      "projectUniqueName": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
       "projectName": "Timer.Web",
-      "projectPath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
+      "projectPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\Timer.Web.csproj",
       "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\obj\\",
+      "outputPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -740,8 +740,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Core\\Timer.Core.csproj": {
-              "projectPath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Core\\Timer.Core.csproj"
+            "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Core\\Timer.Core.csproj": {
+              "projectPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Core\\Timer.Core.csproj"
             },
             "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj": {
               "projectPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj"
