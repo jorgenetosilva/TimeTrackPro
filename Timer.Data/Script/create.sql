@@ -1,26 +1,12 @@
-CREATE TABLE cidade (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE empresa (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE empresa_endereco (
-    empresa_id INTEGER NOT NULL,
-    cidade_id INTEGER NOT NULL,
+CREATE TABLE empresa_detalhes (
+    empresa_id SERIAL PRIMARY KEY,
+    nome_empresa VARCHAR(255) NOT NULL,
+    nome_cidade VARCHAR(255) NOT NULL,
     endereco VARCHAR(255) NOT NULL,
     cep VARCHAR(20) NOT NULL,
     bairro VARCHAR(100) NOT NULL,
     estado VARCHAR(50) NOT NULL,
-    complemento VARCHAR(255),
-    PRIMARY KEY (empresa_id, cidade_id),
-    FOREIGN KEY (empresa_id) 
-        REFERENCES empresa(id),
-    FOREIGN KEY (cidade_id) 
-        REFERENCES cidade(id)
+    complemento VARCHAR(255)
 );
 
 CREATE TABLE categoria (
