@@ -22,6 +22,6 @@ public class RegistroTempoConfiguration : IEntityTypeConfiguration<RegistroTempo
         builder.HasOne(x => x.Usuario).WithMany().HasForeignKey(x => x.UsuarioId);
         builder.HasOne(x => x.Atividade).WithMany().HasForeignKey(x => x.AtividadeId);
         // Nota: Se a entidade EmpresaEndereco estiver configurada corretamente, ajuste a linha abaixo conforme necessário
-        builder.HasOne(x => x.EmpresaEndereco).WithMany().HasForeignKey(x => new { x.EmpresaCidadeEmpresaId, x.EmpresaCidadeCidadeId });
+        builder.HasOne(x => x.EmpresaDetalhes).WithMany().HasForeignKey(x => new { x.EmpresaCidadeEmpresaId, x.EmpresaCidadeCidadeId });
     }
 }

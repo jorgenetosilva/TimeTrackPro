@@ -10,5 +10,5 @@ public class RegistroTempo
 
     public Usuario Usuario { get; set; }
     public Atividade Atividade { get; set; }
-    public EmpresaEndereco EmpresaEndereco { get; set; }
+    public EmpresaDetalhes EmpresaDetalhes { get; set; }
 }
