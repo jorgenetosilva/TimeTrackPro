@@ -1,15 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+using Timer.Core.Settings;
+using Timer.Web.Configurations;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
+var appSettings = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
+builder.Services.AddDependencies(appSettings);
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

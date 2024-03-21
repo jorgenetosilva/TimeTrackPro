@@ -2,10 +2,14 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/pages/home/index.ts', // Ajuste para o seu arquivo de entrada
+  entry: {
+    home: './src/pages/home/index.ts',
+    empresa: './src/pages/empresa/index.ts'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].entry.js',
     path: path.resolve(__dirname, 'wwwroot/dist'),
+    library: ['timer', '[name]'],
   },
   module: {
     rules: [
@@ -14,9 +18,13 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.css'],
   },
 };

@@ -8,18 +8,18 @@ public class EmpresaController : Controller
 {
     private readonly IEmpresaRepository _empresaRepository;
 
-    // public EmpresaController(IEmpresaRepository empresaRepository)
-    // {
-    //     _empresaRepository = empresaRepository;
-    // }
+    public EmpresaController(IEmpresaRepository empresaRepository)
+    {
+        _empresaRepository = empresaRepository;
+    }
 
     [HttpGet]
     public IActionResult Index() => View();
 
-    // [HttpGet("buscar")]
-    // public async Task<IActionResult> GetFiliaisAsync(string nome, string cidade)
-    // {
-    //     var empresas = await _empresaRepository.GetComEnderecoAsync(nome, cidade);
-    //     return View("_Grid", empresas);
-    // }
+    [HttpGet("buscar")]
+    public async Task<IActionResult> GetAsync(string nome, string cidade)
+    {
+        var empresas = await _empresaRepository.GetEmpresasAsync(nome, cidade);
+        return View("_Grid", empresas);
+    }
 }
