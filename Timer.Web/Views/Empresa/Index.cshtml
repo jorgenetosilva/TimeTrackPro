@@ -1,7 +1,5 @@
-@* @model IEnumerable<Ativus.Core.Models.Empresa>; *@
-
 @* @{
-    var user = _httpContextAccessor.HttpContext.GetUser();
+var user = _httpContextAccessor.HttpContext.GetUser();
 } *@
 
 <div class="card mb-3">
@@ -12,30 +10,28 @@
         <div class="card-body">
             <div class="row g-2 align-items-center">
                 <div class="col-md-4 col-12">
-                    <input name="nome" class="form-control form-control-lg" id="input-empresa" placeholder="Empresa"> <!-- uk-input uk-form-medium -->
+                    <input name="empresa" class="form-control form-control-lg" id="input-empresa" placeholder="Empresa">
                 </div>
                 <div class="col-md-4 col-12">
-                    <input name="cidade" class="form-control form-control-lg" id="input-cidade" placeholder="Cidade"> <!-- uk-input uk-form-medium -->
+                    <input name="cidade" class="form-control form-control-lg" id="input-cidade" placeholder="Cidade">
+                    <!-- uk-input uk-form-medium -->
                 </div>
             </div>
             <div class="mt-3 d-flex justify-content-end">
                 <!-- Os botões de parâmetros e cadastro foram comentados no original, assim mantidos aqui. -->
-                <button class="btn btn-danger" type="button" onclick='timer.empresa.getBuscar()'>Pesquisar</button> <!-- uk-button responsive-button uk-button-primary -->
+                <button class="btn btn-danger" type="button" onclick='timer.empresa.getBuscar()'>Pesquisar</button>
+                <!-- uk-button responsive-button uk-button-primary -->
             </div>
         </div>
     </form>
 </div>
 <div id="grid"></div>
 
-@* <script src="~/dist/empresa.entry.js" asp-append-version="true"></script> *@
 <script src="~/dist/empresa.entry.js" asp-append-version="true"></script>
-
 <script>
     timer.empresa.init({
         url: {
-            getBuscar: '@Url.Action("GetAsync", "Empresa")',
-            @* getCadastrar: '@Url.Action("Cadastrar", "Empresa")',
-            GetParametros: '@Url.Action("Parametros", "Empresa")' *@
+            getBuscar: '@Url.Action("buscar", "Empresa", new { area = "" })'
         }
     });
 </script>

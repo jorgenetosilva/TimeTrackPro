@@ -19,6 +19,7 @@ public class EmpresaRepository : IEmpresaRepository
         var query = _dbContext.EmpresaDetalhes.AsQueryable();
 
         if (!string.IsNullOrEmpty(nome))
+            // Atualize aqui para usar o nome correto da coluna.
             query = query.Where(x => EF.Functions.Like(x.Empresa, $"%{nome}%"));
 
         if (!string.IsNullOrEmpty(cidade))

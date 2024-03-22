@@ -1,8 +1,8 @@
 # Folders
 .vs/
 .vscode/
-**/obj/
-**/bin/
+bin/
+obj/
 */temp/
 */wwwroot/temp/
 */wwwroot/lib/

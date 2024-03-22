@@ -17,9 +17,9 @@ public class EmpresaController : Controller
     public IActionResult Index() => View();
 
     [HttpGet("buscar")]
-    public async Task<IActionResult> GetAsync(string nome, string cidade)
+    public async Task<IActionResult> GetAsync(string empresa, string cidade)
     {
-        var empresas = await _empresaRepository.GetEmpresasAsync(nome, cidade);
+        var empresas = await _empresaRepository.GetEmpresasAsync(empresa, cidade);
         return View("_Grid", empresas);
     }
 }

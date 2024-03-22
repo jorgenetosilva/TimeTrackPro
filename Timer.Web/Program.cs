@@ -1,9 +1,11 @@
 using Timer.Core.Settings;
 using Timer.Web.Configurations;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-var appSettings = builder.Configuration.GetSection("AppSettings").Get<AppSettings>();
-builder.Services.AddDependencies(appSettings);
+
+// Registrando dependências do projeto
+builder.Services.AddProjectDependencies(builder.Configuration);
 
 builder.Services.AddControllersWithViews();
 
@@ -19,7 +21,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(

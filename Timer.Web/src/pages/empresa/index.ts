@@ -1,4 +1,5 @@
 import Toast from '../../components/toast';
+import $ from 'jquery';
 
 interface ModelEmpresa {
     url: {
@@ -15,7 +16,7 @@ export function init(parms: ModelEmpresa) {
 export function getBuscar() {
     let formData = $("#form-empresa").serialize();
 
-    console.log("teta");
+    console.log(formData);
 
     $.get(model.url.getBuscar, formData)
     .done((html) => {

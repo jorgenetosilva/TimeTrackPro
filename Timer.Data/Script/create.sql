@@ -31,13 +31,12 @@ CREATE TABLE registro_tempo (
     id SERIAL PRIMARY KEY,
     usuario_id INTEGER NOT NULL,
     atividade_id INTEGER NOT NULL,
-    empresa_cidade_empresa_id INTEGER NOT NULL,
-    empresa_cidade_cidade_id INTEGER NOT NULL,
+    empresa_id INTEGER NOT NULL,
     tempo_gasto INTERVAL NOT NULL,
     FOREIGN KEY (usuario_id) 
         REFERENCES usuario(id),
     FOREIGN KEY (atividade_id) 
         REFERENCES atividade(id),
-    FOREIGN KEY (empresa_cidade_empresa_id, empresa_cidade_cidade_id) 
-        REFERENCES empresa_cidade(empresa_id, cidade_id)
+    FOREIGN KEY (empresa_id) 
+        REFERENCES empresa_detalhes(empresa_id)
 );

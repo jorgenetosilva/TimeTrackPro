@@ -4,7 +4,7 @@ using Timer.Core.Models; // Garanta que está referenciando o namespace correto 
 
 namespace Timer.Data.Configurations;
 
-public class EmpresaEnderecoConfiguration : IEntityTypeConfiguration<EmpresaDetalhes>
+public class EmpresaDetalhesConfiguration : IEntityTypeConfiguration<EmpresaDetalhes>
 {
     public void Configure(EntityTypeBuilder<EmpresaDetalhes> builder)
     {
@@ -13,8 +13,8 @@ public class EmpresaEnderecoConfiguration : IEntityTypeConfiguration<EmpresaDeta
         builder.HasKey(x => x.EmpresaId);
 
         builder.Property(x => x.EmpresaId).HasColumnName("empresa_id").IsRequired();
-        builder.Property(x => x.Empresa).HasColumnName("empresa").IsRequired();
-        builder.Property(x => x.Cidade).HasColumnName("cidade").IsRequired();
+        builder.Property(x => x.Empresa).HasColumnName("nome_empresa").IsRequired();
+        builder.Property(x => x.Cidade).HasColumnName("nome_cidade").IsRequired();
         builder.Property(x => x.Endereco).HasColumnName("endereco").IsRequired();
         builder.Property(x => x.Cep).HasColumnName("cep").IsRequired();
         builder.Property(x => x.Bairro).HasColumnName("bairro").IsRequired();

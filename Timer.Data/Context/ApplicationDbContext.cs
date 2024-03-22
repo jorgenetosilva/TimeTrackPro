@@ -1,18 +1,28 @@
 using Microsoft.EntityFrameworkCore;
 using Timer.Core.Models;
-using Timer.Core.Settings;
+using System.Reflection;
 
 namespace Timer.Data.Context;
 
-public class ApplicationDbContext : BaseDbContext
+public class ApplicationDbContext : DbContext
 {
-  public ApplicationDbContext(AppSettings appSettings) : base(appSettings, "Application")
+  public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+      : base(options)
   {
   }
-  public DbSet<Categoria> Categorias { get; set; }
-  public DbSet<Usuario> Usuarios { get; set; }
-  public DbSet<Atividade> Atividades { get; set; }
-  public DbSet<RegistroTempo> RegistrosTempo { get; set; }
-  public DbSet<EmpresaDetalhes> EmpresaDetalhes { get; set; }
 
+  public DbSet<Atividade> Atividades { get; set; }
+  public DbSet<Categoria> Categorias { get; set; }
+  public DbSet<EmpresaDetalhes> EmpresaDetalhes { get; set; }
+  public DbSet<RegistroTempo> RegistrosTempo { get; set; }
+  public DbSet<Usuario> Usuarios { get; set; }
+
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
+  {
+    base.OnModelCreating(modelBuilder);
+
+    // Aplica todas as configurações do assembly atual
+    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+  }
 }
+

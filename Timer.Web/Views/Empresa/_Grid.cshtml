@@ -1,9 +1,9 @@
 @model IEnumerable<Timer.Core.Models.EmpresaDetalhes>;
 
-@* @{
+@{
     Layout = null;
-    var user = _httpContextAccessor.HttpContext.GetUser();
-} *@
+    @* var user = _httpContextAccessor.HttpContext.GetUser(); *@
+}
 
 @if (Model.Any())
 {
