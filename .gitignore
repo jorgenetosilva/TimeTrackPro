@@ -1,8 +1,8 @@
 # Folders
 .vs/
 .vscode/
-bin/
-obj/
+**/obj/
+**/bin/
 */temp/
 */wwwroot/temp/
 */wwwroot/lib/
@@ -10,3 +10,18 @@ obj/
 */node_modules
 
 nfes/
+
+# Ignores the build output and NuGet packages
+[Tt]imer.Web/obj/
+[Tt]imer.Web/bin/
+*.nuget.dgspec.json
+project.assets.json
+project.nuget.cache
+
+# Files
+.env
+*.trc
+*.user
+nuget.config
+yarn-error.log
+.npmrc
