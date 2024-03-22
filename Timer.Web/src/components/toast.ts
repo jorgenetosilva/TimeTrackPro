@@ -4,7 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 export default class Toast {
     static show(type: 'info' | 'success' | 'warning' | 'error') {
         function showToast(message: string | JQuery.jqXHR<any>, timeout?: number, position?: IziToastPosition, params: IziToastSettings = {}) {
-            // Verifica se message é um objeto jqXHR. Se sim, tenta extrair a mensagem de texto.
             let finalMessage = typeof message === 'string' ? message : message.responseText || "Ocorreu um erro inesperado.";
 
             iziToast[type]({

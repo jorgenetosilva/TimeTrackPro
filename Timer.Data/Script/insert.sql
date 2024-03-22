@@ -1,4 +1,3 @@
--- Insere 10 registros na tabela empresa_detalhes
 INSERT INTO empresa_detalhes (nome_empresa, nome_cidade, endereco, cep, bairro, estado, complemento) VALUES
 ('Tech Innovations', 'São Paulo', 'Av. Paulista, 1000', '01310-000', 'Bela Vista', 'SP', 'Andar 10'),
 ('Creative Solutions', 'Rio de Janeiro', 'Rua do Ouvidor, 50', '20040-030', 'Centro', 'RJ', 'Sala 101'),
@@ -11,7 +10,6 @@ INSERT INTO empresa_detalhes (nome_empresa, nome_cidade, endereco, cep, bairro, 
 ('Space Explorers', 'Fortaleza', 'Rua da Praia, 67', '60060-170', 'Meireles', 'CE', 'Esquina com Av. Beira Mar'),
 ('Ocean Tech', 'Brasília', 'Eixo Monumental, 200', '70070-350', 'Zona Cívico-Administrativa', 'DF', 'Próximo ao Congresso Nacional');
 
--- Insere 10 registros na tabela categoria
 INSERT INTO categoria (nome) VALUES
 ('Informática'),
 ('Construção Civil'),
@@ -24,8 +22,6 @@ INSERT INTO categoria (nome) VALUES
 ('Gastronomia'),
 ('Agricultura');
 
--- Insere 10 registros na tabela atividade
--- Aqui estou supondo que os IDs de categoria vão de 1 a 10, de acordo com a ordem de inserção acima.
 INSERT INTO atividade (nome, categoria_id) VALUES
 ('Desenvolvimento de Website', 1),
 ('Reforma de Escritório', 2),
@@ -38,7 +34,6 @@ INSERT INTO atividade (nome, categoria_id) VALUES
 ('Curso de Culinária', 9),
 ('Implementação de Sistemas de Irrigação', 10);
 
--- Insere 10 registros na tabela usuario
 INSERT INTO usuario (nome, sobrenome, matricula) VALUES
 ('Carlos', 'Silva', 'MAT001'),
 ('Maria', 'Oliveira', 'MAT002'),
@@ -51,8 +46,6 @@ INSERT INTO usuario (nome, sobrenome, matricula) VALUES
 ('Roberto', 'Pereira', 'MAT009'),
 ('Juliana', 'Almeida', 'MAT010');
 
--- Insere 10 registros na tabela registro_tempo
--- Aqui estou supondo que os IDs para usuario, atividade e empresa_detalhes vão de 1 a 10, de acordo com a ordem de inserção acima.
 INSERT INTO registro_tempo (usuario_id, atividade_id, empresa_id, tempo_gasto) VALUES
 (1, 1, 1, INTERVAL '2 hours'),
 (2, 2, 2, INTERVAL '3 hours'),

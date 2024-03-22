@@ -20,8 +20,6 @@ public class ApplicationDbContext : DbContext
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
-
-    // Aplica todas as configurações do assembly atual
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
   }
 }

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Timer.Core.Models; // Garanta que está referenciando o namespace correto do seu modelo
+using Timer.Core.Models;
 
 namespace Timer.Data.Configurations;
 

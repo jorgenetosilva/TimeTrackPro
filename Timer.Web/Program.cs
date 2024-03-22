@@ -1,10 +1,7 @@
-using Timer.Core.Settings;
 using Timer.Web.Configurations;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrando dependências do projeto
 builder.Services.AddProjectDependencies(builder.Configuration);
 
 builder.Services.AddControllersWithViews();

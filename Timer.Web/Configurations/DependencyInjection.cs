@@ -18,7 +18,6 @@ public static class DependencyInjection
 
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
 
-        // Adicione outras dependências conforme necessário
 
         return services;
     }
