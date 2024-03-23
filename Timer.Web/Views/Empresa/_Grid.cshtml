@@ -10,40 +10,40 @@
     <div class="card bg-light mb-3">
         <div class="card-header p-2 bg-light">
             <div class="row g-2 fw-bold">
-                <div class="col-2">
+                <div class="col-md-3">
                     <p class='mb-0'>Nome</p>
                 </div>
-                <div class="col">
+                <div class="col-md-5">
                     <p class='mb-0'>Endereço Completo</p>
                 </div>
-                <div style="width: 75px;">
+                <div class="col-md-2">
                     <p class='mb-0'>Complemento</p>
                 </div>
-                <div style="width: 75px;">
+                <div class="col-md-2">
                     <p class='mb-0'>Situação</p>
                 </div>
-                <div style="width: 75px;"></div>
             </div>
         </div>
         @foreach (var empresa in Model)
         {
             <div class="card">
                 <div class="card-header p-2">
-                    <div class="row g-2">
-                        <div class="col-2">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-md-3">
                             <p class='text-secondary mb-0 d-none d-md-block'>Nome</p>
                             <p class='mb-0'>@empresa.Empresa</p>
                         </div>
-                        <div class="col">
+                        <div class="col-md-5">
                             <p class='text-secondary mb-0 d-none d-md-block'>Endereço Completo</p>
                             <p class='mb-0'>@empresa.Endereco, @empresa.Cidade, @empresa.Bairro, @empresa.Estado</p>
                         </div>
-                        <div style="width: 125px;">
-                            <p class='text-secondary mb-0 d-none d-md-block'>Telefone</p>
+                        <div class="col-md-2">
+                            <p class='text-secondary mb-0 d-none d-md-block'>Complemento</p>
                             <p class='mb-0'>@empresa.Complemento</p>
                         </div>
-                        <div style="width: 75px;">
-                            <p class='text-secondary mb-0 d-none d-md-block'>Situação</p>
+                        <div class="col-md-2">
+                            <p class='text-secondary mb-0 d-none d-md-block'>Status</p>
+                            @* <p class='mb-0'>@empresa.Status</p> *@
                         </div>
                     </div>
                 </div>
