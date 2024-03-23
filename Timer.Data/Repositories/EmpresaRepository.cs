@@ -33,7 +33,8 @@ public class EmpresaRepository : IEmpresaRepository
             Cep = x.Cep,
             Bairro = x.Bairro,
             Estado = x.Estado,
-            Complemento = x.Complemento
+            Complemento = x.Complemento,
+            // Status = x.Status
         })
         .ToListAsync();
     }

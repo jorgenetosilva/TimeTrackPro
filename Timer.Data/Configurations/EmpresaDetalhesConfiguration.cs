@@ -20,5 +20,6 @@ public class EmpresaDetalhesConfiguration : IEntityTypeConfiguration<EmpresaDeta
         builder.Property(x => x.Bairro).HasColumnName("bairro").IsRequired();
         builder.Property(x => x.Estado).HasColumnName("estado").IsRequired();
         builder.Property(x => x.Complemento).HasColumnName("complemento");
+        builder.Property(x => x.Status).HasColumnName("status");
     }
 }
