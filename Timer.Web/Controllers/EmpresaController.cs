@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Timer.Core.Interfaces.Repositories;
+using Timer.Core.Models;
 
 namespace Timer.Web.Controllers;
 
@@ -21,5 +22,19 @@ public class EmpresaController : Controller
     {
         var empresas = await _empresaRepository.GetEmpresasAsync(empresa, cidade);
         return View("_Grid", empresas);
+    }
+    
+    [HttpGet("cadastrar")]
+    public IActionResult GetCadastrarAsync()
+    {
+        return View("Form");
+    }
+
+    [HttpPost("cadastrar")]
+    public async Task<IActionResult> CadastrarAsync(EmpresaDetalhes empresa)
+    {
+        empresa.Status ??= 0;
+        await _empresaRepository.AddAsync(empresa);
+        return RedirectToAction("Index");
     }
 }

@@ -20,7 +20,9 @@
                     <p class='mb-0'>Complemento</p>
                 </div>
                 <div class="col-md-2">
-                    <p class='mb-0'>Situação</p>
+                    <p class='mb-0'>Status</p>
+                </div>
+                <div style="width: 75px;">
                 </div>
             </div>
         </div>
@@ -41,9 +43,18 @@
                             <p class='text-secondary mb-0 d-none d-md-block'>Complemento</p>
                             <p class='mb-0'>@empresa.Complemento</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <p class='text-secondary mb-0 d-none d-md-block'>Status</p>
+                             <p class='mb-0'>
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </p>
                             @* <p class='mb-0'>@empresa.Status</p> *@
+                        </div>
+                        <div class="col-md-1" style="text-align: center;">
+                            <a class="text-decoration-none" href='@Url.Action("Editar", "Empresa", new { id = empresa.EmpresaId })'
+                                data-bs-toggle="tooltip" title="Editar">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

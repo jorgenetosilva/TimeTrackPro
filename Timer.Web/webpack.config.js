@@ -4,7 +4,8 @@ module.exports = {
   mode: 'development',
   entry: {
     home: './src/pages/home/index.ts',
-    empresa: './src/pages/empresa/index.ts'
+    empresa: './src/pages/empresa/index.ts',
+    empresaForm: './src/pages/empresa/form.ts',
   },
   output: {
     filename: '[name].entry.js',

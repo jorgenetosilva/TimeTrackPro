@@ -1,0 +1,67 @@
+@model Timer.Core.Models.EmpresaDetalhes;
+
+<div class="card mt-3 mb-3">
+    <div class="card-header">
+        <div class="row g-2 align-items-center">
+            <a role="button" class="col-auto text-muted p-0" onclick="history.back()">
+                <span class="icon-back" style="font-size: 2rem;">←</span>
+                <!-- Bootstrap não tem um ícone de seta padrão, então você pode usar um ícone de uma biblioteca externa como FontAwesome ou um caractere simples como este -->
+            </a>
+            <h3 class="card-title">Empresa | Cadastro</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <form id="form-cadastrar-empresa" class="card-body row g-2">
+            <div class="col-6">
+                <p class="mb-0 text-muted">Nome</p>
+                <input class="form-control" name="Nome" type="text" value="@Model?.Empresa">
+            </div>
+            <div class="col-6">
+                <p class="mb-0 text-muted">Cidade</p>
+                <input class="form-control" name="Cidade" type="text" value="@Model?.Cidade">
+            </div>
+            <div class="col-6">
+                <p class="mb-0 text-muted">Endereço</p>
+                <input class="form-control" name="Endereco" type="text" value="@Model?.Endereco">
+            </div>
+            <div class="col-6">
+                <p class="mb-0 text-muted">Complemento</p>
+                <input class="form-control" name="Complemento" type="text" value="@Model?.Complemento">
+            </div>
+            <div class="col-3">
+                <p class="mb-0 text-muted">CEP</p>
+                <input class="form-control" name="Cep" type="text" value="@Model?.Cep">
+            </div>
+            <div class="col-3">
+                <p class="mb-0 text-muted">Bairro</p>
+                <input class="form-control" name="Bairro" type="text" value="@Model?.Bairro">
+            </div>
+            <div class="col-3">
+                <p class="mb-0 text-muted">Estado</p>
+                <input class="form-control" name="Estado" type="text" value="@Model?.Estado">
+            </div>
+            <div class="col-3 d-flex align-items-center">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="Status" value="1" @(Model == null ||
+                        Model?.Status == 1 ? "checked" : "")> Ativo
+                </label>
+            </div>
+            <div class="w-100 d-flex justify-content-end mb-3">
+                <button class="btn btn-warning">
+                    Confirmar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/dist/empresaForm.entry.js" asp-append-version="true"></script>
+<script>
+    timer.empresaForm.init({
+        url: {
+            index: '@Url.Action("Index")',
+            post: '@Url.Action("Cadastrar")',
+            @* editar: '@Url.Action("EditarEmpresa", new { id = Model?.Id })', *@
+        }
+    });
+</script>
