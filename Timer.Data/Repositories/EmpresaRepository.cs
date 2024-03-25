@@ -38,4 +38,36 @@ public class EmpresaRepository : IEmpresaRepository
         })
         .ToListAsync();
     }
+
+    public async Task<EmpresaDetalhes> BuscarPorIdAsync(int id)
+    {
+        return await _dbContext.EmpresaDetalhes
+            .Where(x => x.EmpresaId == id)
+            .Select(x => new EmpresaDetalhes
+            {
+                EmpresaId = x.EmpresaId,
+                Empresa = x.Empresa,
+                Cidade = x.Cidade,
+                Endereco = x.Endereco,
+                Cep = x.Cep,
+                Status = x.Status,
+                Bairro = x.Bairro,
+                Estado = x.Estado,
+                Complemento = x.Complemento,
+            })
+        .FirstOrDefaultAsync(x => x.EmpresaId == id);
+    }
+
+    public async Task AddAsync(EmpresaDetalhes empresa)
+    {
+        empresa.EmpresaId = await _dbContext.EmpresaDetalhes.MaxAsync(x => x.EmpresaId) + 1;
+        await _dbContext.EmpresaDetalhes.AddAsync(empresa);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task EditarIdAsync(EmpresaDetalhes empresa)
+    {
+        _dbContext.EmpresaDetalhes.Update(empresa);
+        await _dbContext.SaveChangesAsync();
+    }
 }
