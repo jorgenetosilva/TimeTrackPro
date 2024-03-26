@@ -1,4 +1,5 @@
 import Toast from '../../components/toast';
+import Form from '../../helpers/form';
 import $ from 'jquery';
 import 'jquery-mask-plugin';
 
@@ -6,6 +7,7 @@ interface ModelEmpresaForm {
     url: {
         cadastrar: string;
         index: string;
+        post: string;
     }
 }
 
@@ -17,16 +19,14 @@ export function init(parms: ModelEmpresaForm) {
 
 
 export function post() {
-    let obj =  $("#form-cadastrar-empresa").serialize();
+    let data = Form.serializeObject($("#form-cadastrar-empresa"));
 
+    console.log(data);
 
-    // if (!obj.isValid)
-    //     return;
+    if (!data.isValid)
+        return;
 
-    // if (!validarDados(obj))
-    //     return;
-
-    $.post(model.url.cadastrar, obj)
+    $.post(model.url.cadastrar, data)
         .done(() => {
             window.location.href = model.url.index;
         })

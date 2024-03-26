@@ -13,8 +13,8 @@
     <div class="card-body">
         <form id="form-cadastrar-empresa" class="card-body row g-2">
             <div class="col-6">
-                <p class="mb-0 text-muted">Nome</p>
-                <input class="form-control" name="Nome" type="text" value="@Model?.Empresa">
+                <p class="mb-0 text-muted">Empresa</p>
+                <input class="form-control" name="Empresa" type="text" value="@Model?.Empresa">
             </div>
             <div class="col-6">
                 <p class="mb-0 text-muted">Cidade</p>
@@ -47,7 +47,7 @@
                 </label>
             </div>
             <div class="w-100 d-flex justify-content-end mb-3">
-                <button class="btn btn-warning">
+                <button class="btn btn-warning" type="button" onclick='timer.empresaForm.post()'>
                     Confirmar
                 </button>
             </div>
@@ -60,7 +60,7 @@
     timer.empresaForm.init({
         url: {
             index: '@Url.Action("Index")',
-            post: '@Url.Action("Cadastrar")',
+            post: '@Url.Action("Cadastrar", "Empresa")',
             @* editar: '@Url.Action("EditarEmpresa", new { id = Model?.Id })', *@
         }
     });

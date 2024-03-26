@@ -1,44 +1,42 @@
-// import $ from 'jquery';
-// import String  from 'helpers/string';
-// import 'jquery-mask-plugin';
+import $ from 'jquery';
+import Loading  from './loading';
+import 'jquery-mask-plugin';
 
-// function getRules(element: Element)
-// {
-//     var input = $(element),
-//         dataRules = input.attr('data-rules');
+function getRules(element: Element)
+{
+    var input = $(element),
+        dataRules = input.attr('data-rules');
 
-//     var rules = (dataRules ? dataRules.split(';') : []).map(function (item) {
-//         var rule = item.split(':');
-//         return { name: rule[0].trim(), options: rule[1] ? rule[1].trim() : undefined };
-//     }).filter(function (rule) { return rule.name; });
+    var rules = (dataRules ? dataRules.split(';') : []).map(function (item) {
+        var rule = item.split(':');
+        return { name: rule[0].trim(), options: rule[1] ? rule[1].trim() : undefined };
+    }).filter(function (rule) { return rule.name; });
 
-//     return rules;
-// }
+    return rules;
+}
 
-// function rule(element: Element, condition, message: string, type: string = null) {
-//     var input = $(element),
-//         formControl = input.closest('.uk-form-controls, .uk-inline'),
-//         messageContainer = formControl.find('.message');
+function rule(element: Element, condition: boolean, message: string, type: string = 'error') {
+    var input = $(element),
+        formControl = input.closest('.uk-form-controls, .uk-inline'),
+        messageContainer = formControl.find('.message');
 
-//     type = type || 'error';
+    if (condition) {
+        formControl.removeClass('warning error').addClass(type);
+        if (!messageContainer.length) {
+            messageContainer = $('<div/>', { 'class': `message ${type} uk-text-danger` });
+            formControl.append(messageContainer);
+        }
 
-//     if (condition) {
-//         formControl.removeClass('warning error').addClass(type);
-//         if (!messageContainer.length) {
-//             messageContainer = $('<div/>', { 'class': 'message error uk-text-danger' });
-//             formControl.append(messageContainer);
-//         }
+        input.addClass('uk-form-danger');
+        messageContainer.html(message);
+    } else {
+        formControl.removeClass('warning error');
+        input.removeClass('uk-form-danger');
+        messageContainer.remove();
+    }
 
-//         input.addClass('uk-form-danger');
-//         messageContainer.html(message);
-//     } else {
-//         formControl.removeClass('warning error');
-//         input.removeClass('uk-form-danger');
-//         messageContainer.remove();
-//     }
-
-//     return condition;
-// };
+    return condition;
+}
 
 // $.ajaxSetup({ cache: false });
 // ['put', 'delete'].forEach(function (type) {
@@ -135,4 +133,4 @@
 //     }
 // });
 
-// export default $;
+export default $;

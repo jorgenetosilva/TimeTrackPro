@@ -23,7 +23,7 @@ public class EmpresaController : Controller
         var empresas = await _empresaRepository.GetEmpresasAsync(empresa, cidade);
         return View("_Grid", empresas);
     }
-    
+
     [HttpGet("cadastrar")]
     public IActionResult GetCadastrarAsync()
     {
@@ -31,10 +31,13 @@ public class EmpresaController : Controller
     }
 
     [HttpPost("cadastrar")]
-    public async Task<IActionResult> CadastrarAsync(EmpresaDetalhes empresa)
+    public async Task<IActionResult> CadastrarAsync(EmpresaDetalhes empresaDetalhes)
     {
-        empresa.Status ??= 0;
-        await _empresaRepository.AddAsync(empresa);
+        if (!ModelState.IsValid)
+            return View("Form", empresaDetalhes);
+
+        // empresaDetalhes.Status ??= 0;
+        await _empresaRepository.AddAsync(empresaDetalhes);
         return RedirectToAction("Index");
     }
 }

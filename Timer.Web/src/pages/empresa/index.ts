@@ -15,9 +15,7 @@ export function init(parms: ModelEmpresa) {
 
 export function getBuscar() {
     let formData = $("#form-empresa").serialize();
-
-    console.log(formData);
-
+    
     $.get(model.url.getBuscar, formData)
     .done((html) => {
         $("#grid").html(html);
