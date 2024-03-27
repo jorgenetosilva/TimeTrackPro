@@ -36,8 +36,29 @@ public class EmpresaController : Controller
         if (!ModelState.IsValid)
             return View("Form", empresaDetalhes);
 
-        // empresaDetalhes.Status ??= 0;
+        empresaDetalhes.Status ??= 0;
         await _empresaRepository.AddAsync(empresaDetalhes);
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet("editar/{id}")]
+    public async Task<IActionResult> Editar(int id)
+    {
+        var empresa = await _empresaRepository.BuscarPorIdAsync(id);
+        if (empresa == null)
+            return NotFound();
+
+        return View("Form", empresa);
+    }
+
+    [HttpPost("editar/{id}")]
+    public async Task<IActionResult> EditarEmpresa(EmpresaDetalhes empresa)
+    {
+        empresa.Status ??= 0;
+        if (empresa == null)
+            return NotFound();
+
+        await _empresaRepository.EditarIdAsync(empresa);
         return RedirectToAction("Index");
     }
 }

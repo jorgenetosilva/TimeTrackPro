@@ -34,7 +34,7 @@ public class EmpresaRepository : IEmpresaRepository
             Bairro = x.Bairro,
             Estado = x.Estado,
             Complemento = x.Complemento,
-            // Status = x.Status
+            Status = x.Status
         })
         .ToListAsync();
     }

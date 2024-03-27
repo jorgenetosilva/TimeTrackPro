@@ -8,6 +8,7 @@ interface ModelEmpresaForm {
         cadastrar: string;
         index: string;
         post: string;
+        editar: string;
     }
 }
 
@@ -35,13 +36,18 @@ export function post() {
         });
 }
 
-// function validarDados(obj) {
-//     obj.RGrepresentante = String.unmask(obj.RGrepresentante.toString());
-//     obj.RGTestemunha1 = String.unmask(obj.RGTestemunha1.toString());
-//     obj.RGTestemunha2 = String.unmask(obj.RGTestemunha2.toString());
-//     obj.CNPJ = String.unmask(obj.CNPJ.toString());
-//     obj.CEP = String.unmask(obj.CEP.toString());
-//     obj.CEPrepresentante = String.unmask(obj.CEPrepresentante.toString());
+export function editar() {
+    let obj = Form.serializeObject($("#form-cadastrar-empresa"));
 
-//     return true;
-// }
+    if (!obj.isValid)
+        return;
+
+    $.post({
+        url: model.url.editar,
+        data: obj
+    }).done(() => {
+        window.location.href = model.url.index;
+    }).fail((xhr) => {
+        Toast.error(xhr.responseText);
+    });
+}
