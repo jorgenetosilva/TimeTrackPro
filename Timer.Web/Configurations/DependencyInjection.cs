@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Timer.Core.Helpers;
+using Timer.Core.Interfaces.Helpers;
 using Timer.Core.Interfaces.Repositories;
 using Timer.Core.Settings;
 using Timer.Data.Context;
@@ -17,7 +19,7 @@ public static class DependencyInjection
             ));
 
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
-
+        services.AddScoped<INotification, Notification>();
 
         return services;
     }

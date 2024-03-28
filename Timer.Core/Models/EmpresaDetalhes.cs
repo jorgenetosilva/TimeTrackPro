@@ -1,3 +1,5 @@
+using Timer.Core.Interfaces.Helpers;
+
 namespace Timer.Core.Models;
 
 public class EmpresaDetalhes
@@ -12,22 +14,20 @@ public class EmpresaDetalhes
     public string Estado { get; set; }
     public string Complemento { get; set; }
 
-    public List<string> Validate()
+    public bool IsValid(INotification notification)
     {
-        var errors = new List<string>();
-
         if (string.IsNullOrEmpty(Empresa))
-            errors.Add("Empresa é obrigatório!");
+            notification.Add("Empresa é obrigatório!");
 
         if (string.IsNullOrEmpty(Cidade))
-            errors.Add("Cidade é obrigatório!");
+            notification.Add("Cidade é obrigatório!");
 
         if (string.IsNullOrEmpty(Endereco))
-            errors.Add("Endereço é obrigatório!");
+            notification.Add("Endereço é obrigatório!");
 
         if (string.IsNullOrEmpty(Cep))
-            errors.Add("CEP é obrigatório!");
+            notification.Add("CEP é obrigatório!");
 
-        return errors;
+        return !notification.Any();
     }
 }

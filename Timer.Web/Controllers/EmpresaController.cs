@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Timer.Core.Interfaces.Helpers;
 using Timer.Core.Interfaces.Repositories;
 using Timer.Core.Models;
 
@@ -8,10 +9,12 @@ namespace Timer.Web.Controllers;
 public class EmpresaController : Controller
 {
     private readonly IEmpresaRepository _empresaRepository;
+    private readonly INotification _notification;
 
-    public EmpresaController(IEmpresaRepository empresaRepository)
+    public EmpresaController(IEmpresaRepository empresaRepository, INotification notification)
     {
         _empresaRepository = empresaRepository;
+        _notification = notification;
     }
 
     [HttpGet]
@@ -33,8 +36,8 @@ public class EmpresaController : Controller
     [HttpPost("cadastrar")]
     public async Task<IActionResult> CadastrarAsync(EmpresaDetalhes empresaDetalhes)
     {
-        if (!ModelState.IsValid)
-            return View("Form", empresaDetalhes);
+        if (!empresaDetalhes.IsValid(_notification))
+            return BadRequest(_notification.GetAsString());
 
         empresaDetalhes.Status ??= 0;
         await _empresaRepository.AddAsync(empresaDetalhes);
