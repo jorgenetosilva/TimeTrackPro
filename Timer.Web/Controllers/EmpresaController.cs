@@ -55,13 +55,13 @@ public class EmpresaController : Controller
     }
 
     [HttpPost("editar/{id}")]
-    public async Task<IActionResult> EditarEmpresa(EmpresaDetalhes empresa)
+    public async Task<IActionResult> EditarEmpresa(EmpresaDetalhes empresaDetalhes)
     {
-        empresa.Status ??= 0;
-        if (empresa == null)
-            return NotFound();
+        if (empresaDetalhes == null || empresaDetalhes.Empresa == null)
+            return BadRequest("Os dados da empresa estão incompletos.");
 
-        await _empresaRepository.EditarIdAsync(empresa);
+        empresaDetalhes.Status ??= 0;
+        await _empresaRepository.EditarIdAsync(empresaDetalhes);
         return RedirectToAction("Index");
     }
 }

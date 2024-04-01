@@ -695,11 +695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj",
+      "projectUniqueName": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj",
       "projectName": "Timer.Data",
-      "projectPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj",
+      "projectPath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\Timer.Data.csproj",
       "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\obj\\",
+      "outputPath": "c:\\Users\\jorge\\Desktop\\TimeTrackPro\\Timer.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

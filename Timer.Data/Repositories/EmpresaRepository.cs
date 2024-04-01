@@ -39,10 +39,10 @@ public class EmpresaRepository : IEmpresaRepository
         .ToListAsync();
     }
 
-    public async Task<EmpresaDetalhes> BuscarPorIdAsync(int id)
+    public async Task<EmpresaDetalhes> BuscarPorIdAsync(int empresaId)
     {
         return await _dbContext.EmpresaDetalhes
-            .Where(x => x.EmpresaId == id)
+            .Where(x => x.EmpresaId == empresaId)
             .Select(x => new EmpresaDetalhes
             {
                 EmpresaId = x.EmpresaId,
@@ -55,7 +55,7 @@ public class EmpresaRepository : IEmpresaRepository
                 Estado = x.Estado,
                 Complemento = x.Complemento,
             })
-        .FirstOrDefaultAsync(x => x.EmpresaId == id);
+        .FirstOrDefaultAsync(x => x.EmpresaId == empresaId);
     }
 
     public async Task AddAsync(EmpresaDetalhes empresa)
@@ -65,9 +65,9 @@ public class EmpresaRepository : IEmpresaRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task EditarIdAsync(EmpresaDetalhes empresa)
+    public async Task EditarIdAsync(EmpresaDetalhes empresaDetalhes)
     {
-        _dbContext.EmpresaDetalhes.Update(empresa);
+        _dbContext.EmpresaDetalhes.Update(empresaDetalhes);
         await _dbContext.SaveChangesAsync();
     }
 }

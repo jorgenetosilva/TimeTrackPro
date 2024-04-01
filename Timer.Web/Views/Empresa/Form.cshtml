@@ -11,6 +11,7 @@
     </div>
     <div class="card-body">
         <form id="form-cadastrar-empresa" class="card-body row g-2">
+            <input type="hidden" name="EmpresaId" value="@Model?.EmpresaId">
             <div class="col-6">
                 <p class="mb-0 text-muted">Empresa</p>
                 <input class="form-control" name="Empresa" type="text" value="@Model?.Empresa"required>
