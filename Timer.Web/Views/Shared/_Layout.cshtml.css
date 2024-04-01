@@ -45,3 +45,15 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 30px;
 }
+
+.sidebar {
+  width: 200px;
+  position: sticky;
+  top: 0; 
+  height: 100vh; 
+  overflow-y: auto; 
+}
+
+.main-content {
+    flex-grow: 1;
+}
