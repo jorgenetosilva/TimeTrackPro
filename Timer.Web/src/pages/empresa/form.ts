@@ -51,3 +51,54 @@ export function editar() {
         Toast.error(xhr.responseText);
     });
 }
+
+function formularioCepEmpresa() {
+    function configurarCamposEndereco(dados: any) {
+        const campos = {
+            'Endereco': 'logradouro',
+            'Bairro': 'bairro',
+            'Cidade': 'localidade',
+            'Estado': 'uf'
+        };
+
+        Object.entries(campos).forEach(([campoForm, campoAPI]) => {
+            const seletor = `[name='${campoForm}']`;
+            $(seletor).val(dados ? dados[campoAPI] : "");
+        });
+    }
+
+    function buscarCep(cep: any) {
+        if (/^[0-9]{8}$/.test(cep)) {
+            $.get(`https://viacep.com.br/ws/${cep}/json/`).done((data) => {
+                if (data && !data.erro) {
+                    configurarCamposEndereco(data);
+                } else {
+                    alert("Dados do CEP não encontrados.");
+                    configurarCamposEndereco(null);
+                }
+            }).fail(() => {
+                alert("Erro ao buscar o CEP.");
+                configurarCamposEndereco(null);
+            });
+        } else {
+            alert("Formato de CEP inválido.");
+            configurarCamposEndereco(null);
+        }
+    }
+
+    $("[name='Cep']").on('blur', function () {
+        var cepValue = $(this).val();
+        if (typeof cepValue === 'string') {
+            var cep = cepValue.replace(/\D/g, '');
+            if (cep) {
+                buscarCep(cep);
+            } else {
+                alert("CEP inválido.");
+            }
+        } else {
+            alert("O valor do CEP deve ser uma string.");
+        }
+    });
+}
+
+formularioCepEmpresa();
