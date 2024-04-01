@@ -10,7 +10,7 @@
 <div class="card bg-light mb-3">
     <div class="card-header p-2 bg-light">
         <div class="row g-2 fw-bold">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <p class='mb-0'>Nome</p>
             </div>
             <div class="col-md-5">
@@ -43,12 +43,12 @@
                         <p class='text-secondary mb-0 d-none d-md-block'>Complemento</p>
                         <p class='mb-0'>@empresa.Complemento</p>
                     </div>
-                    <div class="col-md-1">
+                   <div class="col-md-1" style="text-align: center;">
                         <p class='text-secondary mb-0 d-none d-md-block'>Status</p>
-                        <p class='mb-0'>
+                        <p class='mb-0' style="text-align: center;">
                             @(empresa.Status == 1 ?
-                                Html.Raw("<i class='bi bi-check-circle-fill text-success' title='Ativo'></i>") :
-                                (empresa.Status == 0 ? Html.Raw("<i class='bi bi-x-circle-fill text-danger' title='Inativo'></i>") : Html.Raw("")))
+                            Html.Raw("<i class='bi bi-check-circle-fill text-success' title='Ativo'></i>") :
+                            (empresa.Status == 0 ? Html.Raw("<i class='bi bi-x-circle-fill text-danger' title='Inativo'></i>") : Html.Raw("")))
                         </p>
                     </div>
                     <div class="col-md-1" style="text-align: center;">
