@@ -1,12 +1,27 @@
-﻿﻿<div class="card mb-3">
+﻿﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Timer.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Timer.Web.styles.css" asp-append-version="true" />
+</head>
+
+<div class="card mb-3 t-3 mt-md-5">
     <div class="card-header text-center">
         <h2 class="card-title mb-1">Acesso Restrito | Login</h2>
     </div>
     <form id="form-login" method="POST" action="/caminho/para/autenticacao">
-        <div class="card-body">
+        <div class="card-body container-fluid login-container">
             <div class="row justify-content-center">
                 <div class="col-md-4 col-12">
-                    <!-- Campo de Login -->
                     <div class="mb-3">
                         <input name="login" class="form-control" id="input-login" placeholder="Login" type="text">
                     </div>
@@ -14,7 +29,6 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 col-12">
-                    <!-- Campo de Senha -->
                     <div class="mb-3">
                         <input name="senha" class="form-control" id="input-senha" placeholder="Senha" type="password">
                     </div>
@@ -23,7 +37,6 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 col-12">
                     <div class="d-flex justify-content-center">
-                        <!-- Botão de Entrar -->
                         <button class="btn btn-warning btn-lg" type="submit">Entrar</button>
                     </div>
                 </div>
@@ -31,3 +44,7 @@
         </div>
     </form>
 </div>
+
+@* <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/js/site.js" asp-append-version="true"></script> *@
