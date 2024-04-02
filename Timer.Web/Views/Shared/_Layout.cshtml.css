@@ -46,7 +46,7 @@ button.accept-policy {
   line-height: 30px;
 }
 
-.sidebar {
+/* .sidebar {
   width: 200px;
   position: sticky;
   top: 0; 
@@ -56,4 +56,18 @@ button.accept-policy {
 
 .main-content {
     flex-grow: 1;
+} */
+
+.flex-row-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.sidebar {
+  width: 200px;
+  position: sticky;
+  top: 20px;
+  background-color: white;
+}
+.main-content {
+  flex-grow: 1;
 }
