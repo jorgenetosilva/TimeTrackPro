@@ -1,7 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
+﻿a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
@@ -46,18 +43,6 @@ button.accept-policy {
   line-height: 30px;
 }
 
-/* .sidebar {
-  width: 200px;
-  position: sticky;
-  top: 0; 
-  height: 100vh; 
-  overflow-y: auto; 
-}
-
-.main-content {
-    flex-grow: 1;
-} */
-
 .flex-row-container {
   display: flex;
   flex-wrap: nowrap;
@@ -68,6 +53,19 @@ button.accept-policy {
   top: 20px;
   background-color: white;
 }
+
 .main-content {
   flex-grow: 1;
 }
+
+.bg-light {
+  position: fixed;
+  top: 77px;
+  height: calc(100vh - 56px);
+  z-index: 1000;
+}
+
+.col.py-3 {
+  padding-left: 280px;
+}
+
