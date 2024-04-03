@@ -14,5 +14,6 @@ public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
 
         builder.Property(x => x.Id).HasColumnName("id").IsRequired();
         builder.Property(x => x.Nome).HasColumnName("nome").IsRequired();
+        builder.Property(x => x.Senha).HasColumnName("password").IsRequired();
     }
 }
